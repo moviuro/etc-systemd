@@ -9,4 +9,4 @@ IOSchedulingClass=2
 IOSchedulingPriority=7
 Restart=on-failure
 RestartSec=1h
-ExecStart=/usr/bin/wget ftp://%i/domain/named.cache -O /etc/unbound/root.hints
+ExecStart=/usr/bin/curl -o /etc/unbound/root.hints ftp://%i/domain/named.cache
