@@ -1,0 +1,7 @@
+[Unit]
+Description=Save package list
+
+[Service]
+Environment=destination=/etc/pacman.d
+Type=oneshot
+ExecStart=/usr/bin/sh -c "/usr/bin/pacman -Qqe > ${destination}/%H"

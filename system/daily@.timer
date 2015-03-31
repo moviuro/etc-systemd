@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily Timer for %i service
+
+[Timer]
+OnCalendar=daily
+AccuracySec=6h
+Persistent=true
+Unit=%i.service
+
+[Install]
+WantedBy=multi-user.target

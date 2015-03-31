@@ -1,0 +1,16 @@
+[Unit]
+Description=SSH proxy to %i
+Requires=reachable-retry@%i.service
+After=reachable-retry@%i.service
+
+[Service]
+Environment=KEYPATH=/root/.ssh/id_rsa
+Environment=LOCALPORT=changeme
+Environment=DESTPORT=22
+Environment=USERNAME=%u
+ExecStart=/usr/bin/ssh -v -o "ServerAliveInterval 5" -o "ServerAliveCountMax 2" -i ${KEYPATH} -N -D ${LOCALPORT} -p ${DESTPORT} -l ${USERNAME} %i
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+[Unit]
+Description=BTRFS scrub %f
+
+[Service]
+ExecStart=/usr/bin/btrfs scrub start -Bd %f

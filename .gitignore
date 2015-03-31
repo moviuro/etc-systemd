@@ -1,0 +1,8 @@
+*.d/
+*.wants/
+*.conf
+*.network
+*.netdev
+*.link
+system/dbus-org.freedesktop.Avahi.service
+system/display-manager.service

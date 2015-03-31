@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly Timer for %i service
+
+[Timer]
+OnCalendar=weekly
+AccuracySec=6h
+Persistent=true
+Unit=%i.service
+
+[Install]
+WantedBy=multi-user.target

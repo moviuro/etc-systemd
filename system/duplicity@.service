@@ -1,0 +1,11 @@
+[Unit]
+Description=Duplicity backup of %f
+
+[Service]
+Environment=SOURCE=%f
+Environment=SERVER=changeme
+Environment=USERNAME=changeme
+Environment=PROTOCOL=sftp://
+Environment=VERBOSITY=notice
+Environment=PASSPHRASE=changeme
+ExecStart=/usr/bin/duplicity --verbosity ${VERBOSITY} ${SOURCE} ${PROTOCOL}${USERNAME}@${SERVER}/%H${SOURCE}/

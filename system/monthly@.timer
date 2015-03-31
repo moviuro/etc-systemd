@@ -1,0 +1,11 @@
+[Unit]
+Description=Monthly Timer for %i service
+
+[Timer]
+OnCalendar=monthly
+AccuracySec=6h
+Persistent=true
+Unit=%i.service
+
+[Install]
+WantedBy=multi-user.target

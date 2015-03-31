@@ -1,0 +1,8 @@
+[Unit]
+Description=Watch for changes on the %i kernel file to sign it
+
+[Path]
+PathChanged=/boot/%i
+
+[Install]
+WantedBy=multi-user.target
