@@ -1,0 +1,10 @@
+[Unit]
+Description=Clean %f from stale packages and keep some previous versions of packages too
+
+[Service]
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+Type=oneshot
+Environment=NUMBER=3
+ExecStart=/usr/bin/paccache --remove --verbose --keep ${NUMBER} --cachedir %f
