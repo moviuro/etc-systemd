@@ -8,4 +8,5 @@ Environment=USERNAME=changeme
 Environment=PROTOCOL=sftp://
 Environment=VERBOSITY=notice
 Environment=PASSPHRASE=changeme
-ExecStart=/usr/bin/duplicity --verbosity ${VERBOSITY} ${SOURCE} ${PROTOCOL}${USERNAME}@${SERVER}/%H${SOURCE}/
+Environment=OPTIONS=
+ExecStart=/usr/bin/duplicity ${OPTIONS} --verbosity ${VERBOSITY} ${SOURCE} ${PROTOCOL}${USERNAME}@${SERVER}/%H${SOURCE}/
