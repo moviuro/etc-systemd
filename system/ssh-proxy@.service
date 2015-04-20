@@ -8,7 +8,8 @@ Environment=KEYPATH=/root/.ssh/id_rsa
 Environment=LOCALPORT=changeme
 Environment=DESTPORT=22
 Environment=USERNAME=%u
-ExecStart=/usr/bin/ssh -v -o "ServerAliveInterval 5" -o "ServerAliveCountMax 2" -i ${KEYPATH} -N -D ${LOCALPORT} -p ${DESTPORT} -l ${USERNAME} %i
+Environment=CIPHER=aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,arcfour256,arcfour128,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour
+ExecStart=/usr/bin/ssh -v -o "ServerAliveInterval 5" -o "ServerAliveCountMax 2" -c ${CIPHER} -i ${KEYPATH} -N -D ${LOCALPORT} -p ${DESTPORT} -l ${USERNAME} %i
 Restart=on-failure
 RestartSec=2
 
