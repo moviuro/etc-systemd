@@ -3,4 +3,5 @@ Description=BTRFS scrub %f
 
 [Service]
 ExecStart=/usr/bin/btrfs scrub start -Bd %f
+ExecStop=/usr/bin/btrfs scrub cancel %f
 SyslogIdentifier=btrfs-scrub@%f
