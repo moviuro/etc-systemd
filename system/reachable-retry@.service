@@ -3,7 +3,7 @@ Description=Test if %i is reachable
  
 [Service]
 Type=forking
-ExecStart=/usr/bin/ping -c1 %i
+ExecStart=/usr/bin/ping -qc1 %i
 Restart=on-failure
 RestartSec=2
 
