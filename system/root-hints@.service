@@ -10,3 +10,4 @@ IOSchedulingPriority=7
 Restart=on-failure
 RestartSec=1h
 ExecStart=/usr/bin/curl -o /etc/unbound/root.hints ftp://%i/domain/named.cache
+SyslogIdentifier=root-hints@%i

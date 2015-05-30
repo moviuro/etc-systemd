@@ -6,6 +6,7 @@ Type=forking
 ExecStart=/usr/bin/ping -qc1 %i
 Restart=on-failure
 RestartSec=2
+SyslogIdentifier=reachable-retry@%i
 
 [Install]
 WantedBy=multi-user.target
