@@ -1,5 +1,12 @@
 [Unit]
 Description=Test if %i is reachable
+# Usage:
+#  If you have a service that requires a working connection to my.host, just add
+#  the following to the override file of said service:
+#
+# [Unit]
+# After=reachable-retry@my.host.service
+# Requires=reachable-retry@my.host.service
  
 [Service]
 Type=forking
