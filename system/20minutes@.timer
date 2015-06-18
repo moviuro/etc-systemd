@@ -1,0 +1,9 @@
+[Unit]
+Description=20 minutes Timer for %i service
+
+[Timer]
+OnCalendar=*-*-* *:0/20:0
+Unit=%i.service
+
+[Install]
+WantedBy=default.target
