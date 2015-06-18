@@ -1,0 +1,8 @@
+[Unit]
+Description=Unison sync for profile %i
+
+[Service]
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStart=/usr/bin/unison -batch %i
