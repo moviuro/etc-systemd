@@ -1,7 +1,0 @@
-[Unit]
-Description=Sign gummiboot
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/sbsign --key /etc/secureboot/DB/db.key --cert /etc/secureboot/DB/db.crt --output /boot/efi/gummiboot/gummibootx64.efi.signed /usr/lib/gummiboot/gummibootx64.efi
-SyslogIdentifier=sbsign-gummiboot

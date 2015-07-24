@@ -1,0 +1,8 @@
+[Unit]
+Description=Watch for changes on the %f file to sign it
+
+[Path]
+PathChanged=/%f
+
+[Install]
+WantedBy=multi-user.target

@@ -1,7 +1,0 @@
-[Unit]
-Description=Sign the %i kernel
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/sbsign --key /etc/secureboot/DB/db.key --cert /etc/secureboot/DB/db.crt --output /boot/%i.signed /boot/%i
-SyslogIdentifier=sbsign-kernel@%i

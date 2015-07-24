@@ -1,8 +1,0 @@
-[Unit]
-Description=Watch for changes on the BOOTX64.EFI file to sign gummiboot
-
-[Path]
-PathChanged=/boot/efi/gummiboot/gummibootx64.efi
-
-[Install]
-WantedBy=multi-user.target
