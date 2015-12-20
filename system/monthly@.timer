@@ -2,7 +2,7 @@
 Description=Monthly Timer for %i service
 
 [Timer]
-OnCalendar=monthly
+OnCalendar=*-*-1 02:00:00
 AccuracySec=6h
 Persistent=true
 Unit=%i.service
