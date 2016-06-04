@@ -3,7 +3,9 @@ Description=Start tmux in detached session
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/tmux new-session -s %u -d
+Environment=width=80
+Environment=height=24
+ExecStart=/usr/bin/tmux new-session -s %u -x ${width} -y ${height} -d
 ExecStop=/usr/bin/tmux kill-session -t %u
 Restart=on-failure
 RestartSec=2
