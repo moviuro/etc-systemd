@@ -1,0 +1,7 @@
+[Unit]
+Description=Sync pacman(8) db to allow local search (pacman -F)
+Documentation=man:pacman(8)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pacman -Fy
