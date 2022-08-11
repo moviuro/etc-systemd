@@ -1,0 +1,7 @@
+[Unit]
+Desctiption=Sync all mailboxes
+Documentation=man:mbsync(1)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -a
