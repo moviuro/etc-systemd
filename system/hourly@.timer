@@ -3,7 +3,7 @@ Description=Hourly Timer for %i service
 
 [Timer]
 OnCalendar=hourly
-AccuracySec=6h
+AccuracySec=15min
 Persistent=true
 Unit=%i.service
 
