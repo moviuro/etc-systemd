@@ -1,0 +1,7 @@
+[Unit]
+Description=Pull flatpak updates without installing them
+Documentation=man:flatpak-update(1)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flatpak update --noninteractive --no-deploy
