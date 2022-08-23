@@ -1,8 +1,8 @@
 [Unit]
 Description=Sync pacman(8) db to allow local search (pacman -F)
 Documentation=man:pacman(8)
-After=reachable-retry@archlinux.org
-Requires=reachable-retry@archlinux.org
+After=reachable-retry@archlinux.org.service
+Requires=reachable-retry@archlinux.org.service
 
 [Service]
 Type=oneshot
