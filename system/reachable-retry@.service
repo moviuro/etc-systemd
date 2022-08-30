@@ -9,11 +9,6 @@ Description=Test if %i is reachable
 # Requires=reachable-retry@my.host.service
  
 [Service]
-Type=forking
-ExecStart=/usr/bin/ping -qc1 %i
-Restart=on-failure
-RestartSec=2
+Type=notify
+ExecStart=/usr/lib/systemd/scripts/reachable-retry %i
 SyslogIdentifier=reachable-retry@%i
-
-[Install]
-WantedBy=multi-user.target

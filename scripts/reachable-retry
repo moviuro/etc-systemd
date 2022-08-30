@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# This script is only supposed to be run by systemd
+# After successfully ping(8)-ing, the script will systemd-notify(1) that it
+# succeeded.
+
+: "${_ping_target:="$1"}"
+: "${_ping_target:?"Missing ping(8) destination!"}"
+
+while ! ping -qc 1 "${_ping_target}" >/dev/null 2>&1; do
+  sleep 5
+done
+
+systemd-notify --ready
