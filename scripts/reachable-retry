@@ -11,4 +11,6 @@ while ! ping -qc 1 "${_ping_target}" >/dev/null 2>&1; do
   sleep 5
 done
 
-systemd-notify --ready
+# See https://github.com/systemd/systemd/issues/24516#issuecomment-1233032190
+# exec is needed so that in user mode, systemd-notify has the correct PID
+exec systemd-notify --ready
