@@ -1,5 +1,5 @@
 [Unit]
-Desctiption=Sync all mailboxes
+Description=Sync all mailboxes
 Documentation=man:mbsync(1)
 
 [Service]
