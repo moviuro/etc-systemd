@@ -1,0 +1,11 @@
+[Unit]
+Description=Minutely Timer for %i service
+
+[Timer]
+OnCalendar=minutely
+AccuracySec=15sec
+Persistent=true
+Unit=%i.service
+
+[Install]
+WantedBy=default.target
