@@ -1,0 +1,8 @@
+[Unit]
+Description=Update local GPG keys with remote data
+Documentation=man:gpg(1)
+
+[Service]
+ExecStart=/usr/bin/gpg --refresh-keys
+Restart=on-failure
+RestartSec=3600
