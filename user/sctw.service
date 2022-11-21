@@ -1,0 +1,6 @@
+[Unit]
+Description=screen color temperature wrapper
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sctw
