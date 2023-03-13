@@ -1,0 +1,10 @@
+[Unit]
+Description=Launch %i service 24hours (86410sec) after it deactivated
+
+[Timer]
+OnUnitInactiveSec=86410sec
+Unit=%i.service
+Persistent=true
+
+[Install]
+WantedBy=default.target
