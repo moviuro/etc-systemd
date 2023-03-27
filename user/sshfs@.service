@@ -1,0 +1,21 @@
+[Unit]
+Description=Mount %I with sshfs
+# Setup: setfattr -n user.be.popho.sshfs.remote -v 'user@server:/path/' /local/path
+# Test:  sshfs -f "$(/usr/bin/getfattr --dump --match user.be.popho.sshfs.remote --only-values /local/path)" /local/path
+# Then:  systemctl enable --now sshfs@"$(systemd-escape /local/path)"
+# NB: systemd.mount(8) is not a solution because the mount will stay failed if
+# the server dies (or is otherwise unavailable)
+After=network-online.target
+Wants=network-online.target
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=exec
+# Define some ssh(1) -o options so that the unit fails fast, should it fail
+Environment=SAI=10 SACM=1
+ExecStart=/bin/sh -c '/usr/bin/sshfs -f "$(/usr/bin/getfattr --dump --match user.be.popho.sshfs.remote --only-values %I)" %I -o ServerAliveInterval=$SAI,ServerAliveCountMax=$SACM,_netdev'
+ExecStop=/usr/bin/umount %I
+Restart=on-failure
+RestartSec=20
