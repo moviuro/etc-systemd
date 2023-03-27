@@ -5,6 +5,8 @@ Description=Launch %i service 24hours (86410sec) after it deactivated
 OnUnitInactiveSec=86410sec
 Unit=%i.service
 Persistent=true
+# NB: does not (yet) survive reboots :(
+# https://github.com/systemd/systemd/issues/26943
 
 [Install]
 WantedBy=default.target
